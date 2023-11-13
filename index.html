@@ -38,30 +38,36 @@
 
     <img class="img-mario" src="./assets/mario.png" alt="" />
 
-    <form class="fale-conosco">
+    <form
+      class="fale-conosco"
+      action="https://formsubmit.co/ingridferreiradoalira6411@gmail.com"
+      method="POST"
+    >
       <h2>Fale conosco</h2>
-      <input placeholder="Seu nome" type="text" />
-      <input placeholder="Seu telefone" type="tel" />
-      <textarea placeholder="Digite seu problema aqui"></textarea>
+      <input placeholder="Seu nome" type="text" name="none" />
+      <input placeholder="Seu telefone" type="tel" name="telefone"/>
+      <textarea placeholder="Digite seu problema aqui" name="info"></textarea>
       <button onclick="sumirFormulario()">Enviar formulário</button>
     </form>
 
     <div class="mascara-form"></div>
   </body>
   <script>
+    let formulario =
+      document.querySelector(
+        ".fale-conosco"
+      ); /*vá no meu html e selecione o meu formulario por sua classe*/
+    let mascara = document.querySelector(".mascara-form");
 
-    let formulario = document.querySelector('.fale-conosco')/*vá no meu html e selecione o meu formulario por sua classe*/
-    let mascara = document.querySelector('.mascara-form')
-
-    function cliqueiNoBotao(){/*quando eu clicar no meu botao*/
-       formulario.style.left="520px" /*pegue meu formulario e troque o estilo left do meu css para 700px*/
-       mascara.style.visibility="visible"
+    function cliqueiNoBotao() {
+      /*quando eu clicar no meu botao*/
+      formulario.style.left =
+        "520px"; /*pegue meu formulario e troque o estilo left do meu css para 700px*/
+      mascara.style.visibility = "visible";
     }
 
-    function sumirFormulario(){
-      formulario.style.left="-290px"
+    function sumirFormulario() {
+      formulario.style.left = "-290px";
     }
-
- 
   </script>
 </html>
