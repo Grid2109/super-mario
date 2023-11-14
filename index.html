@@ -19,6 +19,14 @@
       <div class="mascara-video"></div>
     </div>
 
+    <audio id="minhaMusica" autoplay loop>
+      <source
+        src="./Música mais famosa dos Video Games - Super Mário Bros(MP3_160K).mp3"
+        type="audio/mp3"
+      />
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
     <div class="box-conteudo">
       <img
         class="logo-super-mario"
@@ -36,7 +44,7 @@
       <button onclick="cliqueiNoBotao()">Fale conosco</button>
     </div>
 
-    <img class="img-mario" src="./assets/mario.png" alt="" />
+    <img class="mario-luigi" src="./assets/mario.png" alt="" />
 
     <form
       class="fale-conosco"
@@ -61,13 +69,16 @@
 
     function cliqueiNoBotao() {
       /*quando eu clicar no meu botao*/
-      formulario.style.left =
-        "520px"; /*pegue meu formulario e troque o estilo left do meu css para 700px*/
+      formulario.style.left = "50%"; /*Centraliza horizontalmente*/
+      formulario.style.transform =
+        "translateX(-50%)"; /* Aplica a transformação para ajustar ao centro independentemente da largura do formulário */
       mascara.style.visibility = "visible";
     }
 
     function sumirFormulario() {
-      formulario.style.left = "-310px";
+      formulario.style.left = "-320px";
     }
+
+    document.getElementById("minhaMusica").play();
   </script>
 </html>
