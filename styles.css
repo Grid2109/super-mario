@@ -44,6 +44,8 @@ video {
 
 .box-conteudo {
   width: 40%;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo-super-mario {
@@ -74,13 +76,50 @@ button:hover{
   opacity: .8;
 }
 
+.gif-mario {
+  width: 80px;
+  position: absolute;
+  bottom: 0;
+  left: -210px;
+  animation: jump 5s, mario-animation 9s;
+  visibility: hidden;
+}
+
+@keyframes mario-animation {
+  from {
+    left: -210px;
+  }
+
+  to {
+    left: 100%;
+  }
+
+}
+
+
+@keyframes jump {
+  27% {
+    bottom: 0;
+  }
+
+  29% {
+    bottom: 37px;
+  }
+
+  30% {
+    bottom: 0;
+  }
+
+
+}
+
 .mario-luigi {
  max-width: 500px;
  width: 100%;
 }
 
 .fale-conosco {
-  position: fixed;
+  position: absolute;
   left: -320px;
   background: #fff;
   display: flex;
@@ -125,8 +164,8 @@ textarea {
   background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
 }
 
-@media screen and (max-width: 940px){
-  
+@media screen and (max-width: 940px) and (orientation: portrait) and (orientation: landscape){
+
   .mario-luigi {
     min-width: 420px;
     width: 50%;
@@ -176,6 +215,7 @@ video {
     flex-direction: column;
     align-items: center;
     margin: 20px 0;
+    position: relative;
 }
 
 
@@ -189,4 +229,9 @@ p{
   font-size: 16px;
   text-align: center;
 }
+
+.gif-mario {
+ top: 480px;
+}
+
 }

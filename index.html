@@ -19,13 +19,30 @@
       <div class="mascara-video"></div>
     </div>
 
-    <audio id="minhaMusica" autoplay loop>
+    <audio id="music" autoplay loop>
       <source
-        src="./Música mais famosa dos Video Games - Super Mário Bros(MP3_160K).mp3"
+        src="./audio/Overworld Theme - Super Mario_ World(MP3_160K).mp3"
         type="audio/mp3"
       />
       Seu navegador não suporta o elemento de áudio.
     </audio>
+
+    <audio id="musicJump" autoplay>
+      <source
+        src="./audio/Mario Jump Sound Effect(MP3_160K).mp3"
+        type="audio/mp3"
+      />
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <audio id="sendForm" autoplay>
+      <source
+        src="./audio/Efeito de Som do mario entrando no cano(MP3_128K).mp3"
+        type="audio/mp3"
+      />
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
 
     <div class="box-conteudo">
       <img
@@ -44,6 +61,7 @@
       <button onclick="cliqueiNoBotao()">Fale conosco</button>
     </div>
 
+    <img class="gif-mario" src="./assets/oie_15182138KSjp2GpQ.gif" alt="" />
     <img class="mario-luigi" src="./assets/mario.png" alt="" />
 
     <form
@@ -66,19 +84,28 @@
         ".fale-conosco"
       ); /*vá no meu html e selecione o meu formulario por sua classe*/
     let mascara = document.querySelector(".mascara-form");
+    let mario = document.querySelector(".gif-mario");
+    let musica = document.querySelector("music");
+    let musicaJump = document.querySelector("musicJump")
+    let formularioEnviado = document.querySelector("sendForm")
 
     function cliqueiNoBotao() {
-      /*quando eu clicar no meu botao*/
-      formulario.style.left = "50%"; /*Centraliza horizontalmente*/
-      formulario.style.transform =
-        "translateX(-50%)"; /* Aplica a transformação para ajustar ao centro independentemente da largura do formulário */
-      mascara.style.visibility = "visible";
+      setTimeout(() => {
+        /* Código que será executado após o atraso */
+        formulario.style.left = "50%";
+        formulario.style.transform = "translateX(-50%)";
+        mascara.style.visibility = "visible";
+      }, 1000); // 1000 milissegundos = 1 segundo
+      mario.style.visibility = "visible";
+      music.play();
+      musicJump.play()
     }
 
     function sumirFormulario() {
       formulario.style.left = "-320px";
+      mascara.style.visibility = "hidden";
+      music.pause();
+      sendForm.play()
     }
-
-    document.getElementById("minhaMusica").play();
   </script>
 </html>
