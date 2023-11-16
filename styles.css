@@ -80,30 +80,32 @@ button:hover{
 .gif-mario {
   width: 80px;
   position: absolute;
-  animation: mario-animation 9s, jump 5s;
+  animation: mario-animation 9s, jump 4s;
+  bottom: 0;
+  left: -240px;
   visibility: hidden;
 }
 
 @keyframes mario-animation {
   from {
-   left: -240px;
+   left: -210px;
   }
 
   to {
-   left: 100%;
+    left: 90%;
   }
 }
 
 @keyframes jump {
-  30% {
+  40% {
    bottom: 0;
   }
 
-  32% {
+  43% {
   bottom: 35px;
   }
 
-  33% {
+  48% {
     bottom: 0;
   }
 }
@@ -170,15 +172,15 @@ textarea {
    }
 
    @keyframes jump {
-    35% {
+    45% {
      bottom: 0;
     }
   
-    38% {
+    50% {
     bottom: 260px;
     }
   
-    41% {
+    53% {
       bottom: 0;
     }
   
@@ -196,15 +198,15 @@ textarea {
   }
 
   @keyframes jump {
-    35% {
+    45% {
      bottom: 0;
     }
   
-    38% {
+    50% {
     bottom: 165px;
     }
   
-    40% {
+    53% {
       bottom: 0;
     }
   
@@ -259,15 +261,15 @@ p{
 }
 
  @keyframes jump {
-    60% {
+    75% {
      bottom: 0;
     }
   
-    65% {
+    78% {
     bottom: 337px;
     }
   
-    70% {
+    80% {
       bottom: 0;
     }
   
