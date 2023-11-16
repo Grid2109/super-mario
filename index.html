@@ -19,7 +19,7 @@
       <div class="mascara-video"></div>
     </div>
 
-    <audio id="music" autoplay>
+    <audio id="music">
       <source
         src="./audio/Overworld Theme - Super Mario_ World(MP3_160K).mp3"
         type="audio/mp3"
@@ -27,7 +27,7 @@
       Seu navegador não suporta o elemento de áudio.
     </audio>
 
-    <audio id="musicJump" autoplay>
+    <audio id="musicJump">
       <source
         src="./audio/Mario Jump Sound Effect(MP3_160K).mp3"
         type="audio/mp3"
@@ -35,7 +35,7 @@
       Seu navegador não suporta o elemento de áudio.
     </audio>
 
-    <audio id="musicSendForm" autoplay>
+    <audio id="musicSendForm">
       <source
         src="./audio/Efeito de Som do mario entrando no cano(MP3_128K).mp3"
         type="audio/mp3"
@@ -83,10 +83,11 @@
         ".fale-conosco"
       ); /*vá no meu html e selecione o meu formulario por sua classe*/
     let mascara = document.querySelector(".mascara-form");
-    let mario = document.querySelector(".gif-mario");
-    let musica = document.querySelector("music");
-    let musicaJump = document.querySelector("musicJump");
-    let musicformularioEnviado = document.querySelector("musicSendForm");
+    let gifMario = document.querySelector(".gif-mario");
+    let musica = document.querySelector("#music");
+    let musicaJump = document.querySelector("#musicJump");
+    let musicformularioEnviado = document.querySelector("#musicSendForm");
+    
 
     // Definindo o volume para 50%
     music.volume = 0.2; // Isso define o volume da música principal
@@ -99,20 +100,23 @@
         formulario.style.left = "50%";
         formulario.style.transform = "translateX(-50%)";
         mascara.style.visibility = "visible";
-      }, 1000); // 1000 milissegundos = 1 segundo
+  
+      }, 2000); //
+      
+      gifMario.style.display= "block";
 
-      mario.style.visibility = "visible";
-      mario.style.left = "-240px";
-      mario.style.bottom = "0";
-      music.play();
+      music.play()
 
-      // Adiciona um atraso antes de iniciar a música de pulo
-      setTimeout(() => {
-        musicJump.currentTime = 0; // Reinicia a música de pulo
-        musicJump.play();
-      }, 650); 
+        // Adiciona um atraso antes de iniciar a música de pulo
+        setTimeout(() => {
+          musicJump.currentTime = 0; // Reinicia a música de pulo
+          musicJump.play();
+          mario.style.animation = 'mario-animation 9s, jump 5s';
+        }, 1600);
+
+    
+      
     }
-
     function sumirFormulario() {
       formulario.style.left = "-320px";
       mascara.style.visibility = "hidden";
