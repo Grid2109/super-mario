@@ -19,7 +19,7 @@
       <div class="mascara-video"></div>
     </div>
 
-    <audio id="music" autoplay loop>
+    <audio id="music" autoplay>
       <source
         src="./audio/Overworld Theme - Super Mario_ World(MP3_160K).mp3"
         type="audio/mp3"
@@ -35,14 +35,13 @@
       Seu navegador não suporta o elemento de áudio.
     </audio>
 
-    <audio id="sendForm" autoplay>
+    <audio id="musicSendForm" autoplay>
       <source
         src="./audio/Efeito de Som do mario entrando no cano(MP3_128K).mp3"
         type="audio/mp3"
       />
       Seu navegador não suporta o elemento de áudio.
     </audio>
-
 
     <div class="box-conteudo">
       <img
@@ -86,8 +85,13 @@
     let mascara = document.querySelector(".mascara-form");
     let mario = document.querySelector(".gif-mario");
     let musica = document.querySelector("music");
-    let musicaJump = document.querySelector("musicJump")
-    let formularioEnviado = document.querySelector("sendForm")
+    let musicaJump = document.querySelector("musicJump");
+    let musicformularioEnviado = document.querySelector("musicSendForm");
+
+    // Definindo o volume para 50%
+    music.volume = 0.2; // Isso define o volume da música principal
+    musicJump.volume = 0.05; // Isso define o volume da música de pulo
+    musicSendForm.volume = 0.1; //Isso define o volume da música de envio do formulário
 
     function cliqueiNoBotao() {
       setTimeout(() => {
@@ -96,16 +100,24 @@
         formulario.style.transform = "translateX(-50%)";
         mascara.style.visibility = "visible";
       }, 1000); // 1000 milissegundos = 1 segundo
+
       mario.style.visibility = "visible";
+      mario.style.left = "-240px";
+      mario.style.bottom = "0";
       music.play();
-      musicJump.play()
+
+      // Adiciona um atraso antes de iniciar a música de pulo
+      setTimeout(() => {
+        musicJump.currentTime = 0; // Reinicia a música de pulo
+        musicJump.play();
+      }, 1000); // Ajuste o tempo conforme necessário (2000 milissegundos = 2 segundos)
     }
 
     function sumirFormulario() {
       formulario.style.left = "-320px";
       mascara.style.visibility = "hidden";
       music.pause();
-      sendForm.play()
+      musicSendForm.play();
     }
   </script>
 </html>

@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  overflow: hidden;
 }
 
 .box-video-mario {
@@ -46,6 +47,7 @@ video {
   width: 40%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .logo-super-mario {
@@ -79,39 +81,36 @@ button:hover{
 .gif-mario {
   width: 80px;
   position: absolute;
-  bottom: 0;
-  left: -210px;
-  animation: jump 5s, mario-animation 9s;
+  animation: mario-animation 9s, jump 5s;
   visibility: hidden;
 }
 
 @keyframes mario-animation {
   from {
-    left: -210px;
+   left: -240px;
   }
 
   to {
-    left: 100%;
+   left: 100%;
   }
-
 }
-
 
 @keyframes jump {
-  27% {
-    bottom: 0;
-  }
-
-  29% {
-    bottom: 37px;
-  }
-
   30% {
-    bottom: 0;
+   bottom: 0;
   }
 
+  32% {
+  bottom: 35px;
+  }
 
+  33% {
+    bottom: 0;
+  }
 }
+
+
+
 
 .mario-luigi {
  max-width: 500px;
@@ -127,7 +126,7 @@ button:hover{
   padding: 1.25rem;
   border-radius: .625rem;
   gap: 1.25rem;
-  transition: left 1s linear;
+  transition: left 2s linear;
   z-index: 4;
 }
 
@@ -164,12 +163,27 @@ textarea {
   background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
 }
 
-@media screen and (max-width: 940px) and (orientation: portrait) and (orientation: landscape){
+@media screen and (max-width: 940px){
 
   .mario-luigi {
     min-width: 420px;
     width: 50%;
    }
+
+   @keyframes jump {
+    35% {
+     bottom: 0;
+    }
+  
+    38% {
+    bottom: 260px;
+    }
+  
+    41% {
+      bottom: 0;
+    }
+  
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -181,6 +195,21 @@ textarea {
   p {
     font-size: 16px;
   }
+
+  @keyframes jump {
+    35% {
+     bottom: 0;
+    }
+  
+    38% {
+    bottom: 165px;
+    }
+  
+    40% {
+      bottom: 0;
+    }
+  
+}
 }
 
 @media screen and (max-width: 641px){
@@ -230,8 +259,19 @@ p{
   text-align: center;
 }
 
-.gif-mario {
- top: 480px;
+ @keyframes jump {
+    60% {
+     bottom: 0;
+    }
+  
+    65% {
+    bottom: 337px;
+    }
+  
+    70% {
+      bottom: 0;
+    }
+  
 }
 
 }
