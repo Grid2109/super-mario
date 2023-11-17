@@ -260,16 +260,26 @@ p{
   text-align: center;
 }
 
+@keyframes mario-animation {
+  from {
+   left: -210px;
+  }
+
+  to {
+    left: 75%;
+  }
+}
+
  @keyframes jump {
-    50% {
+    63% {
      bottom: 0;
     }
   
-    53% {
+    65% {
     bottom: 337px;
     }
   
-    55% {
+    68% {
       bottom: 0;
     }
   
