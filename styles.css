@@ -271,15 +271,15 @@ p{
 }
 
  @keyframes jump {
-    63% {
+    75% {
      bottom: 0;
     }
   
-    65% {
+    78% {
     bottom: 337px;
     }
   
-    68% {
+    80% {
       bottom: 0;
     }
   

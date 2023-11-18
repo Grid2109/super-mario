@@ -106,11 +106,12 @@
       music.play();
 
       // Adiciona um atraso antes de iniciar a música de pulo
+      let delay = window.innerWidth < 641 ? 3500 : 1600;// Se a largura for menor que 641 pixels, o atraso será de 3500 milissegundos, caso contrário, será de 1600 milissegundos. 
+
       setTimeout(() => {
         musicJump.currentTime = 0; // Reinicia a música de pulo
         musicJump.play();
-
-      }, 1600);
+      }, delay); //  a variável delay é usada para determinar o tempo de atraso com base na largura da janela. 
     }
     function sumirFormulario() {
       formulario.style.left = "-320px";
